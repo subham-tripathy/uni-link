@@ -12,9 +12,9 @@ const logout = () => {
             }
             return null;
         }
-        const dhuser = getCookie('dhuser');
-        if (dhuser) {
-            document.cookie = "dhuser=" + dhuser + "; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        const unilinkuser = getCookie('unilinkuser');
+        if (unilinkuser) {
+            document.cookie = "unilinkuser=" + unilinkuser + "; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
             alert('Successfully logged out !')
             window.location.href = '/'
         }
