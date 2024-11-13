@@ -11,8 +11,11 @@ function isEmpty(obj) {
 
 export default function handler(req, res) {
     const { id, password } = req.query;
-    con.query('select * from users where CompanyId = "' + id + '"', (err, result, fields) => {
-        console.log(result)
+    // console.log("req.query:");
+    // console.log(req.query);
+    console.log(`select * from users where CompanyId = '${id}';`);
+    con.query(`select * from users where CompanyId = '${id}';`, (err, result, fields) => {
+        console.log("result: " + result)
         if (isEmpty(result)) {
             res.send({ 'msg': 'user doesn\'t exists', })
         }
